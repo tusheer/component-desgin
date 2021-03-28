@@ -1,0 +1,59 @@
+.successful-divition img {
+    animation-name: successfullImg;
+    animation-duration: 3s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+    animation-play-state: running;
+    animation-direction: alternate;
+    margin-bottom: 30px;
+}
+.successful-divition h2 {
+    animation-delay: 0.3s;
+    animation-name: successfullh2;
+    animation-duration: 0.5s;
+    animation-fill-mode: backwards;
+}
+.successful-divition button {
+    animation-name: successfullButton;
+    animation-delay: 1s;
+    animation-duration: 0.5s;
+    animation-fill-mode: backwards;
+}
+
+@keyframes successfullh2 {
+    0% {
+        opacity: 0;
+        transform: translate(0px, 20px);
+    }
+    80% {
+        opacity: 0.5;
+        transform: translate(0px, -15px);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(0px, 0px);
+    }
+}
+
+@keyframes successfullImg {
+    0% {
+        transform: translate(0px, 20px);
+    }
+    100% {
+        transform: translate(0px, 0px);
+    }
+}
+@keyframes successfullButton {
+    0% {
+        transform: translate(0px, -20px);
+        opacity: 0;
+    }
+    80% {
+        transform: scale(1.2);
+        opacity: 0.7;
+    }
+    100% {
+        opacity: 1;
+        transform: translate(0px, 0px);
+    }
+}

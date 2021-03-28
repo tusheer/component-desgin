@@ -55,8 +55,8 @@ const Text1From = () => {
             <FormInput name='name' required type='text' labelImage={UserImage} placeholder='Full Name' className='mb-3.5' />
             <FormInput name='email' required type='email' labelImage={EmailImage} placeholder='Email Address' className='mb-3.5' />
             <FormInput name='password' required type='password' labelImage={KeyImage} placeholder='Password' className='mb-3.5' />
-            <div className='flex space-x-4'>
-                <div className='w-6/12'>
+            <div className='flex md:space-x-4 space-x-0 flex-wrap md:flex-nowrap'>
+                <div className='md:w-6/12  w-full mb-3.5 md:mb-0'>
                     <Label text='Date of Birth' className='mb-3.5' />
                     <div className='flex space-x-4'>
                         <FormInput name='day' required type='number' max={'2'} placeholder='DD' maxLength={2} />
@@ -64,7 +64,7 @@ const Text1From = () => {
                         <FormInput name='year' required type='number' placeholder='YYYY' maxLength={4} />
                     </div>
                 </div>
-                <div className='w-6/12 '>
+                <div className='md:w-6/12  w-full flex-wrap md:flex-nowrap'>
                     <Label text='Gender' className='mb-3.5' />
                     <RadioOption inputName='gender' inputvalue={state.gender} optionLists={gernderOptionList} onChange={onChange} />
                 </div>
@@ -78,7 +78,7 @@ const Text1From = () => {
                 className='mb-3.5'
             />
             <FormInput labelImage={Card} name='cardNumber' required type='number' placeholder='Card Number' className='mb-3.5' />
-            <div className='space-x-5 flex'>
+            <div className='md:space-x-5 space-x-0 flex flex-wrap md:flex-nowrap'>
                 <FormInput
                     labelImage={UserImage}
                     name='year'
@@ -86,9 +86,9 @@ const Text1From = () => {
                     type='number'
                     placeholder='Card CVC'
                     maxLength={4}
-                    className='w-6/12'
+                    className='md:w-6/12  w-full mb-3.5 md:mb-0'
                 />
-                <div className='w-6/12 flex'>
+                <div className='md:w-6/12  w-full   flex'>
                     <FormSelect placeholder='Select Date' className='w-6/12'>
                         <React.Fragment>
                             {/* I know in real word application dynamic select input doesnot work in the way, I just design the component.  */}

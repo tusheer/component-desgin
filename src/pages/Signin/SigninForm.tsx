@@ -3,10 +3,11 @@ import KeyImage from 'assets/img/key.svg';
 import Checkbox from 'components/Checkbox';
 import FormInput from 'components/FormInput';
 import Label from 'components/Label';
+import SubmitButton from 'components/SubmitButton';
 import React from 'react';
+import { useHistory } from 'react-router-dom';
 import delay from 'utils/delay';
 import signinValidation from 'utils/SIgninValidation';
-
 interface State {
     email: string;
     password: string;
@@ -17,11 +18,13 @@ interface Error {
     password: boolean | undefined;
 }
 const SigninForm = () => {
+    const history = useHistory();
     const [agreeWithTerms, setTerms] = React.useState<boolean>(false);
     const [state, setState] = React.useState<State>({
         email: '',
         password: '',
     });
+    const [buttonLodding, setLoading] = React.useState<boolean>(false);
     const [error, setErrors] = React.useState<Error>({
         password: undefined,
         email: undefined,
@@ -36,9 +39,11 @@ const SigninForm = () => {
 
     const onSubmit = (event: React.FormEvent<EventTarget>) => {
         event.preventDefault();
+
         if (agreeWithTerms && !error.password && !error.password) {
+            setLoading(true);
             delay(3000).then(() => {
-                alert('hi');
+                history.push('/successful');
             });
         }
     };
@@ -77,13 +82,7 @@ const SigninForm = () => {
                     I accept the terms and condition for signing up to this service , and hereby confirm I have read the privacy policy
                 </div>
             </div>
-            <button
-                className={`bg-green  focus:outline-none text-gray-50 transition-all rounded-3xl h-10 px-10 mt-5  ${
-                    agreeWithTerms ? 'bg-opacity-100' : 'bg-opacity-40'
-                }`}
-            >
-                Submit
-            </button>
+            <SubmitButton loading={buttonLodding} disable={agreeWithTerms} />
         </form>
     );
 };

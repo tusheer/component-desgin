@@ -17,7 +17,7 @@ module.exports = {
         black : "#000000",
         greyColor: "#BABABC",
         white:"#FFFFFF",
-        red: colors.red
+        red: colors.rose
       },
       textIndent: theme => theme('spacing'),
     },
