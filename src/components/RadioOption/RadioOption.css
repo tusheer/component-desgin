@@ -1,0 +1,12 @@
+.active svg {
+    fill: white;
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+}
+.inactive svg {
+    fill: #bababc;
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+}
