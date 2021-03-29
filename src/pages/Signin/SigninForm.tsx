@@ -32,7 +32,7 @@ const SigninForm = () => {
 
     const onChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         const { value, name } = event.target;
-        const { errors } = signinValidation(state);
+        const { errors } = signinValidation({ ...state, [name]: value });
         setState({ ...state, [name]: value });
         setErrors(errors);
     };

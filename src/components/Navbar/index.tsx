@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import './Navbar.css';
 const Navbar = () => {
     return (
-        <nav className='h-20 navbar sticky top-0'>
+        <nav className='h-20 navbar sticky top-0 z-50'>
             <div className='h-full container mx-auto px-5 flex justify-between items-center bg-white '>
                 <Link to='/'>
                     <img src={Logo} alt='logo' />
